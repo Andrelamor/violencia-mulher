@@ -1,0 +1,62 @@
+resources:
+  - path: data/feminicidio-2018-01-2021-10.csv
+    name: feminicidio-2018-01-2021-10
+    profile: tabular-data-resource
+    scheme: file
+    format: csv
+    hashing: md5
+    encoding: utf-8-sig
+    dialect:
+      delimiter: ;
+    schema:
+      fields:
+        - type: integer
+          name: MUNICIPIO_COD
+          title: "Código do Município"
+          description: "Codificação do município de acordo com o IBGE"
+        - type: string
+          name: MUNICIPIO_NOME
+        - type: string
+          name: TIPO
+          constraints:
+            enum:
+              - 'CONSUMADO'
+              - 'TENTADO'
+        - type: integer
+          name: DIA
+        - type: integer
+          name: MES
+        - type: integer
+          name: ANO
+        - type: integer
+          name: RISP
+        - type: string
+          name: RMBH
+        - type: integer
+          name: VITIMAS
+  - path: data/violencia-contra-mulher-2018-01-2021-10.csv
+    name: violencia-contra-mulher-2018-01-2021-10
+    profile: tabular-data-resource
+    scheme: file
+    format: csv
+    hashing: md5
+    encoding: utf-8-sig
+    dialect:
+      delimiter: ;
+    schema:
+      fields:
+        - type: integer
+          name: MUNICIPIO-COD
+        - type: string
+          name: MUNICIPIO-NOME
+        - type: integer
+          name: DIA
+        - type: integer
+          name: MES
+        - type: integer
+          name: ANO
+        - type: integer
+          name: VITIMAS
+profile: data-package
+name: violencia-mulher
+title: "Conjunto-teste de demonstração da oficina com a SEJUSP"
